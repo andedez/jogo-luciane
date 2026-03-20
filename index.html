@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jogo HTTPS - Missão Servidor Seguro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Press+Start+2P&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="top-bar">
+        <div class="top-bar__title">
+          <h1>Missão HTTPS</h1>
+          <p class="subtitle">Aprenda a comunicação entre cliente e servidor seguro brincando</p>
+        </div>
+        <button id="btnTheme" class="btn btn--ghost btn--theme">
+          Tema: <span id="themeLabel">Pixel</span>
+        </button>
+      </header>
+
+      <main>
+        <section class="screen screen--left">
+          <h2>Fluxo da conexão</h2>
+          <div class="stepper" id="stepper">
+            <!-- steps gerados via JS -->
+          </div>
+          <button id="btnStart" class="btn btn--primary">Começar partida</button>
+          <button id="btnReset" class="btn btn--ghost" disabled>Reiniciar</button>
+        </section>
+
+        <section class="screen screen--right">
+          <h2>Terminal de rede</h2>
+          <div class="terminal" id="terminal"></div>
+
+          <h3>Escolha a próxima ação correta</h3>
+          <div id="choices" class="choices">
+            <!-- botões de escolha via JS -->
+          </div>
+
+          <div class="status-bar">
+            <div>Fase: <span id="phaseLabel">-</span></div>
+            <div>Pontos: <span id="score">0</span></div>
+            <div>Erros: <span id="errors">0</span>/3</div>
+          </div>
+        </section>
+      </main>
+
+      <section class="help">
+        <h2>Dicas rápidas</h2>
+        <ul>
+          <li><strong>HTTPS</strong> é HTTP + camada de criptografia (TLS).</li>
+          <li>O cliente e o servidor trocam <strong>chaves</strong> e <strong>certificados</strong> antes de enviar dados.</li>
+          <li>Códigos <strong>2xx</strong> indicam sucesso, <strong>3xx</strong> redirecionamento, <strong>4xx</strong> erro do cliente, <strong>5xx</strong> erro do servidor.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="modal hidden" id="modal">
+      <div class="modal__content">
+        <h2 id="modalTitle"></h2>
+        <p id="modalMessage"></p>
+        <button id="modalButton" class="btn btn--primary">Jogar de novo</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
